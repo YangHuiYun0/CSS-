@@ -1,0 +1,71 @@
+<style>
+  .body{
+    padding: 100px;
+  }
+  .parallelogram{
+    position: relative;
+    width: 200px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    
+  }
+  .parallelogram::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    background: green;
+    transform: skewX(-45deg);
+  }
+
+  .rhombus{
+    width: 100px;
+    height: 100px;
+    background: red;
+    /* transform: rotate(-45deg); */
+    clip-path: polygon(50% 0,100% 50%,50% 100%,0 50%);
+  }
+  .bartip{
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    width:520px;
+  }
+  .bartxt{
+    position: absolute;
+    bottom: -110px;
+    left: 0;
+    padding: 10px;
+    background:rgba(255,247,211,1);
+    box-shadow:-2px -3px 9px 0px rgba(245,214,9,0.4);
+    border:2px solid rgba(245,163,9,0.5);
+    font-size: 32px;
+    color: #C56110;
+  }
+  .bartxt::before{
+    width: 0;
+    height: 0;
+    position: absolute;
+    content: "";
+    right: 5px;
+    top: -7px;
+    z-index: 10;
+    border-right: 10px dashed transparent;
+    border-bottom: 10px solid #FFF7D3;
+    border-left: 10px dashed transparent;
+  }
+</style>
+
+<div class="body">
+  <!-- 平行四边形 -->
+  <div class="parallelogram">hello,world</div>
+  <!-- 菱形 -->
+  <div class="rhombus"></div>
+  <div class="bartip">
+      <div class="bartxt" id="bartxt">66</div>
+  </div>
+</div>

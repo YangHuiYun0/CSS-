@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .swiperwrap{
+            width: 92%;
+            height: 180px;
+            margin: 0 auto;
+            overflow: auto;
+            -webkit-overflow-scrolling: touch;
+            overflow-scrolling: touch;
+        }
+        .itemwrap{
+            width: auto;
+            height: 100%;
+            white-space: nowrap;
+        }
+        .swiperitem{
+            position:relative;
+            display: inline-block;/*子元素都在一行*/
+            width: 540px;
+            height: 90%;
+            border-radius: 10px;
+            background:rgba(255,244,242,1);
+            border:2px solid rgba(255,185,176,1);
+            border-left: 10px solid rgba(255,185,176,1);
+            -webkit-user-select:none;
+            -moz-user-select:none;
+            -ms-user-select:none;
+            user-select:none; /*控制页面文字不会被选中*/
+        }
+        .itemleft{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 370px;
+            height: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .itemleft h2 {
+            width: 350px;
+            margin: 0 auto;
+            font-size: 36px;
+            color: #D94835;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow:ellipsis;
+        }
+        .itemleft p {
+            width: 350px;
+            margin: 0 auto;
+            font-size: 20px;
+            color: #f59588;
+        }
+        .itemright{
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 150px;
+            height: 100%;
+            border-left: 2px dotted rgba(255,185,176,1);
+        }
+        .ball{
+            position: absolute;
+            width: 20px;
+            height: 10px;
+            border-radius: 12px 12px 0 0;
+            background-color: #ffffff;
+            border: 2px solid rgba(255,185,176,1);
+            border-bottom: none;
+        }
+        .topball{
+            top: -2px;
+            left: -12px;
+            transform: rotate(180deg);
+        }
+        .botball{
+            bottom: -2px;
+            left: -12px;
+        }
+        .drawbtn{
+            position: absolute;
+            top:50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            font-size: 28px;
+            color:#D94835 ;
+        }
+    </style>
+</head>
+<body>
+    <div class="swiperwrap">
+        <div class="itemwrap">
+            <div class="swiperitem">
+                <div class="itemleft">
+                    <div>
+                        <h2>满200减50</h2>
+                        <p>有效期：2019.08.10-2019.12.30</p>
+                    </div>
+                </div>
+                <div class="itemright">
+                    <span class="ball topball"></span>
+                    <span class="ball botball"></span>
+                    <div class="drawbtn">
+                        立即领取
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

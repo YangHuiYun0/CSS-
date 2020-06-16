@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .content{
+            color: red;
+        }
+        .content::before{
+            content: '';
+            position: absolute;
+            background: url('./image/bg1.png');
+            width: 20px;
+            height: 20px;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">我是伪元素</div>
+</body>
+</html>
