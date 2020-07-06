@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .content{
+            position: absolute;
+            top: 10px;;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <canvas id='canvas' width="200" height="50"></canvas>
+        <div class="content">hello world</div>
+    </div>
+</body>
+<script>
+    var canvas = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
+    ctx.rect(0,0,canvas.width,canvas.height);
+    ctx.fill();
+    ctx.globalCompositeOperation = 'destination-out'
+    canvas.addEventListener('mousedown',eventDown);
+    canvas.addEventListener('mouseup',eventUp);
+    canvas.addEventListener('mousemove',eventMove);
+    var mouseDown = false;
+    function eventDown(e) {
+        e.preventDefault();
+        mouseDown = true;
+    }
+    function eventUp(e) {
+        e.preventDefault();
+        mousedown = false;
+    }
+    function eventMove(e) {
+        e.preventDefault();
+        // if(mousedown){
+            var x = (e.clientX + document.body.scrollLeft || e.pageX) - offSetX ||0;
+            var y = (e.clientY + document.body.scrollTop || e.pageY) - offsetY || 0;
+            ctx.beginPath();
+            ctx.arc(x,y,20,0,Math.PI*20);
+            ctx.fill()
+        // }
+    }
+
+</script>
+</html>
