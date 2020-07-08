@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html *{
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <section id="sec">
+        <style>
+            #sec{
+                /* 显示父节点被隐藏部分 overflow: hidden给父元素创建了一个BFC块级规划上下文*/
+                overflow: hidden;
+                background: red;
+            }
+            .child{
+                height: 100px;
+                margin-top: 10px;
+                background: yellow;
+            }
+        </style>
+        <article class="child"></article>
+    </section>
+    <!-- BFC 垂直方向解决边距的问题 -->
+    <section id="margin">
+        <style>
+            #margin{
+                background: pink;
+                overflow: hidden;
+            }
+        </style>
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>    
+    </section>
+    <br>
+    <!-- BFC不与FLoat重叠 -->
+    <section id="layout">
+        <style>
+            #layout{
+                background: red;
+            }
+            #layout .left{
+                float: left;
+                width: 100px;
+                height: 100px;
+                background: pink;
+            }
+            #layout .right{
+                height: 110px;
+                background: seagreen;
+                overflow: auto;
+            }
+        </style>
+        <div class="left"></div>
+        <div class="right"></div>
+    </section>
+    <br>
+    <!-- BFC子元素即使是float也会参与高度计算  BFC清除浮动 -->
+    <section id="float">
+        <style>
+            #float{
+                background: red;
+                /* float: left; */
+                overflow: auto;
+            }
+            #float .float{
+                float: left;
+            }
+        </style>
+        <div class="float">我是浮动元素</div>
+    </section>
+</body>
+</html>
